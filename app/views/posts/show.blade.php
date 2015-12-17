@@ -4,7 +4,7 @@
 @section('content')
 	<!-- Blog Post -->
 
-	@include('posts.partials._article')
+	@include('posts.partials._article', compact('post'))
 
 	<!-- Blog Comments -->
 
@@ -13,9 +13,9 @@
 	<hr>
 
 	<!-- Posted Comments -->
-
-	@foreach($post['comments'] as $comment)
-		@include('comments._item', compact('comment'))
+	
+	@foreach($post->activeComments as $comment)
+    	@include('comments._item', compact('comment'))
 	@endforeach
 
 	{{--@include('comments._item_nested')--}}

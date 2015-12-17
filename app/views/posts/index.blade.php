@@ -5,7 +5,7 @@
 	@include('posts.partials._header')
 
 	@foreach($posts as $post)
-	    @include('posts.partials._item', compact('post'))
+        @include('posts.partials._item', compact('post'))
 	    <hr>
 	@endforeach
 

@@ -17,7 +17,7 @@
 
 <!-- Post Content -->
 <p class="lead">
-	{{$post['description']}}
+	{{$post->description}}
 </p>
-{{$post['content']}}
+{{$post->content}}
 <hr>

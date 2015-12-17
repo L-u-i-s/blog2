@@ -3,8 +3,18 @@
     "description": "A simple blog template that uses startbootstrap blog template and a few of slim",
     "require": {
         "slim/slim": "2.*",
-        "clickcoder/slim-blade": "dev-master"
+        "clickcoder/slim-blade": "dev-master",
+	    "illuminate/database": "~4.2",
+	    "respect/validation": "~0.8",
+		"zeuxisoo/slim-whoops": "0.3.0",
+		"robmorgan/phinx": "*"
     },
+    "repositories": [
+		{
+	        "type":"vcs",
+	        "url":"https://github.com/mariano-escalera/slim-blade"
+	    }
+	],
     "autoload": {
         "classmap": [
             "app"

@@ -3,6 +3,6 @@
 @section('content')
 	<!-- Blog Post Create -->
     
-   	    @include('admin.posts._table')
+   	    @include('admin.posts._form_edit')
    	    
 @stop

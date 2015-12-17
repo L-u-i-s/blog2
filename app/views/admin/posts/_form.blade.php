@@ -1,4 +1,10 @@
-<form action="#" method="POST">
+@if(isset($flash['post.errors']))
+	@foreach($flash['post.errors'] as $error)
+		<div class="alert alert-warning" role="alert">{{$error}}</div>
+	@endforeach
+@endif
+
+<form action="{{$app->urlFor('posts.store')}}" method="POST">
     <div class="form-group">
         <label for="post-title">Post Title</label>
         <input type="text" class="form-control" id="post-title" placeholder="Post title" name="title">
@@ -14,7 +20,7 @@
     <div class="form-group">
         <label for="post-status">Post Status</label>
         <select class="form-control" id="post-status" name="status">
-            <option value="0" selected>Draft</option>
+            <option value="0">Draft</option>
             <option value="1">Published</option>
             <option value="2">Archived</option>
         </select>

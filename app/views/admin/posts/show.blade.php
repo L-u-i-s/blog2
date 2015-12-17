@@ -4,7 +4,7 @@
 @section('content')
 	<!-- Blog Post -->
 
-	@include('posts.partials._article')
+	@include('posts.partials._article', compact('post'))
 
 	<!-- Blog Comments -->
 
@@ -14,7 +14,7 @@
 
 	<!-- Posted Comments -->
 
-	@foreach($post['comments'] as $comment)
+	@foreach($post->comments as $comment)
 		@include('admin.comments._item', compact('comment'))
 	@endforeach
 

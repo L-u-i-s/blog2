@@ -10,25 +10,25 @@
 		</tr>
 	</thead>
 	<tbody>
-		@foreach($posts as $posts)
+	    @foreach($posts as $post)
 			<tr>
-				<td>{{$posts['id']}}</td>
-				<td>{{$posts['title']}}</td>
-				<td>{{$posts['status']}}</td>
-				<td>{{count($posts['comments'])}}</td>
-				<td>{{count($posts['new_comments'])}}</td>
+				<td>{{$post->id}}</td>
+				<td>{{$post->title}}</td>
+				<td>{{$post->postStatus->value}}</td>
+				<td>{{count($post->activeComments)}}</td>
+				<td>{{count($post->newComments)}}</td>
 				<td>
-					<a href="#" class="btn btn-primary btn-xs" role="button">
+					<a href="{{$app->urlFor('admin.posts.show', ['id' => $post->id])}}" class="btn btn-primary btn-xs" role="button">
 						<span class="glyphicon glyphicon-eye-open"></span>
 					</a>
-					<a href="#" class="btn btn-info btn-xs" role="button">
+					<a href="{{$app->urlFor('admin.posts.edit', ['id' => $post->id])}}" class="btn btn-info btn-xs" role="button">
 			            <span class="glyphicon glyphicon-pencil"></span>
 			        </a>
-					<a href="#" class="btn btn-danger btn-xs" role="button">
+					<a href="{{$app->urlFor('admin.posts.destroy', ['id' => $post->id])}}" class="btn btn-danger btn-xs" role="button">
 						<span class="glyphicon glyphicon-trash"></span>
 					</a>
 				</td>
 			</tr>
-		@endforeach
+		@endforeach	
 	</tbody>
 </table>
